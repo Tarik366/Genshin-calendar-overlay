@@ -15,6 +15,7 @@ class FloatingWindow(tk.Toplevel):
         self.overrideredirect(True)
         self.attributes('-alpha', 0.8)
         self.attributes('-topmost', True)
+        self.configure(bg="black")
 
         self.grip = tk.Label(self, bitmap="gray25")
         self.grip.pack(side="left", fill="y")
