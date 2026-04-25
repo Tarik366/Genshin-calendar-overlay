@@ -3,6 +3,7 @@
 # Retrieved 2026-04-26, License - CC BY-SA 4.0
 
 import tkinter as tk
+from tkinter import font
 
 class App(tk.Tk):
     def __init__(self):
@@ -15,6 +16,10 @@ class FloatingWindow(tk.Toplevel):
         self.overrideredirect(True)
         self.attributes('-alpha', 0.8)
         self.attributes('-topmost', True)
+        self.geometry(f"+850+200")
+
+        self.defaultFont = font.nametofont("TkDefaultFont")
+        self.defaultFont.configure(family="Default_SC-85W", size=16, weight="normal") 
 
         self.grip = tk.Label(self, bitmap="gray25", fg="white", bg="black")
         self.grip.pack(side="left", fill="y")
