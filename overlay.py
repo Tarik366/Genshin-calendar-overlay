@@ -1,53 +1,37 @@
 import tkinter as tk
-import datetime
-import locale
 import serverTime
-from pytz import timezone
-from insertText import insert_with_fallback
+import floatingWindow
 
-locale.setlocale(locale.LC_TIME, 'tr_TR.UTF-8')
+root = floatingWindow.App()
 
-root = tk.Tk()
+root.title("Genshin Todo Calendar")
 
-root.option_add("*Font", "Genshin-Impact 16")
+@root.floater.add_widget
+def date(parent):
+    return tk.Label(parent, text=serverTime.date, font=("Noto Sans", 16, "bold"), fg="white", bg="black")
 
-root.title("Always On Top")
-
-now = datetime.datetime.now(timezone(serverTime.ServerTimezones["Asia"]))
-date = now.strftime("%x %a").encode(locale.getlocale()[1], "backslashreplace").decode()
-
-# Make the window transparent (optional)
-root.attributes('-alpha', 0.8)
-
-# Set the window to always be on top
-root.attributes('-topmost', True)
-
-root.overrideredirect(1)
-
-print(date)
-label = tk.Label(root, text=date, font=("Noto Sans", 16, "bold"))
-label.pack(pady=10)
-
-listbox = tk.Listbox(height = 10, 
+@root.floater.add_widget
+def overlay(parent):
+    listbox = tk.Listbox(parent, height = 10, 
                   width = 15, 
-                  bg = "grey",
+                  bg = "black",
                   activestyle = 'dotbox', 
                   font = "Default_SC-85W",
-                  fg = "yellow")
+                  fg = "white")
 
-Items = [
-    "Furina kitap",
-    "Esco kitap",
-    "Skirk kitap",
-    "Raiden kitap",
-    "土",
-    "balığk",
-]
-i=0
-for item in Items:
-    i+=1
-    listbox.insert(i, item)
+    Items = [
+        "Furina kitap",
+        "Esco kitap",
+        "Skirk kitap",
+        "Raiden kitap",
+        "土",
+        "balığk",
+    ]
+    i=0
+    for item in Items:
+        i+=1
+        listbox.insert(i, item)
 
-listbox.pack()
+    return listbox
 
 root.mainloop()
