@@ -15,12 +15,11 @@ class FloatingWindow(tk.Toplevel):
         self.overrideredirect(True)
         self.attributes('-alpha', 0.8)
         self.attributes('-topmost', True)
-        self.configure(bg="black")
 
-        self.grip = tk.Label(self, bitmap="gray25")
+        self.grip = tk.Label(self, bitmap="gray25", fg="white", bg="black")
         self.grip.pack(side="left", fill="y")
         
-        self.content_frame = tk.Frame(self)
+        self.content_frame = tk.Frame(self, bg="black")
         self.content_frame.pack(side="right", fill="both", expand=True)
 
         self.grip.bind("<ButtonPress-1>", self.start_move)
