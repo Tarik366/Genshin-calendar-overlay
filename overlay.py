@@ -4,7 +4,7 @@ import serverTime, floatingWindow, Config
 
 root = floatingWindow.App()
 
-ServerTime = tk.StringVar(value=serverTime.getServerTime(Config.default_settings), name="ServerTime")
+ServerTime = tk.StringVar(value=serverTime.getServerTime(Config.default_settings["Server"], Config.default_settings["Language"]), name="ServerTime")
 
 root.title("Genshin Todo Calendar")
 root.geometry("500x500+200+400")
@@ -16,12 +16,22 @@ ComboBoxForm: dict[str, list] = {
     "Language": ["English", "Turkish", "Japanese"]
 }
 
-settings = {}
+def reloadTime():
+    ServerTime.set(serverTime.getServerTime(settings["Server"].get(), settings["Language"].get())) 
+
+def changeLanguage():
+    if(settings["Language"] in Config.CJK_FONTS):
+        root.defaultFont.configure(family="Genshin-Impact", size=16, weight="normal") 
+    else: 
+        root.defaultFont.configure(family="Default_SC-85W", size=16, weight="normal") 
+    reloadTime()
+
+settings = Config.default_settings.copy()
 combos = {}
 i=0
   
 def ComboboxSelected(e):
-    ServerTime.set(serverTime.getServerTime(settings))
+    reloadTime()
 
 for lab, boxValues in ComboBoxForm.items():
     i+=1

@@ -26,7 +26,7 @@ class FloatingWindow(tk.Toplevel):
         
         self.content_frame = tk.Frame(self, bg="black")
         self.content_frame.pack(side="right", fill="both", expand=True)
-
+        
         self.grip.bind("<ButtonPress-1>", self.start_move)
         self.grip.bind("<ButtonRelease-1>", self.stop_move)
         self.grip.bind("<B1-Motion>", self.do_move)
