@@ -93,21 +93,186 @@ character_ascension_requirements = [
 
 weapon_ascension_requirements = [
     {
-        "Mora": 
-        "AntiqueMat2": 
-        "AntiqueMat3": 
-        "AntiqueMat4": 
-        "AntiqueMat5": 
-        "AscensionMat2": 
-        "AscensionMat3": 
-        "AscensionMat4": 
+        "Mora": 10000,
+        "AntiqueMat2": 5,
+        "AntiqueMat3": 0,
+        "AntiqueMat4": 0,
+        "AntiqueMat5": 0,
+        "AscensionMat2": 5,
+        "AscensionMat3": 0,
+        "AscensionMat4": 0,
         "EnhancementMaterial1": 3,
         "EnhancementMaterial2": 0,
         "EnhancementMaterial3": 0,
-    }
+    },
+    {
+        "Mora": 20000,
+        "AntiqueMat2": 0,
+        "AntiqueMat3": 5,
+        "AntiqueMat4": 0,
+        "AntiqueMat5": 0,
+        "AscensionMat2": 18,
+        "AscensionMat3": 00,
+        "AscensionMat4": 00,
+        "EnhancementMaterial1": 12,
+        "EnhancementMaterial2": 0,
+        "EnhancementMaterial3": 0,
+    },
+    {
+        "Mora": 30000,
+        "AntiqueMat2": 0,
+        "AntiqueMat3": 9,
+        "AntiqueMat4": 0,
+        "AntiqueMat5": 0,
+        "AscensionMat2": 0,
+        "AscensionMat3": 9,
+        "AscensionMat4": 0,
+        "EnhancementMaterial1": 0,
+        "EnhancementMaterial2": 9,
+        "EnhancementMaterial3": 0,
+    },
+    {
+        "Mora": 45000,
+        "AntiqueMat2": 0,
+        "AntiqueMat3": 0,
+        "AntiqueMat4": 5,
+        "AntiqueMat5": 0,
+        "AscensionMat2": 0,
+        "AscensionMat3": 18,
+        "AscensionMat4": 00,
+        "EnhancementMaterial1": 0,
+        "EnhancementMaterial2": 14,
+        "EnhancementMaterial3": 0,
+    },
+    {
+        "Mora": 55000,
+        "AntiqueMat2": 0,
+        "AntiqueMat3": 0,
+        "AntiqueMat4": 9,
+        "AntiqueMat5": 0,
+        "AscensionMat2": 0,
+        "AscensionMat3": 0,
+        "AscensionMat4": 14,
+        "EnhancementMaterial1": 0,
+        "EnhancementMaterial2": 0,
+        "EnhancementMaterial3": 9,
+    },
+    {
+        "Mora": 65000,
+        "AntiqueMat2": 0,
+        "AntiqueMat3": 0,
+        "AntiqueMat4": 0,
+        "AntiqueMat5": 6,
+        "AscensionMat2": 0,
+        "AscensionMat3": 0,
+        "AscensionMat4": 27,
+        "EnhancementMaterial1": 0,
+        "EnhancementMaterial2": 0,
+        "EnhancementMaterial3": 18,
+    },
 ]
 
-talent_ascension_requirements = []
+talent_ascension_requirements = [
+    {
+        "Mora": 12500,
+        "Drop1": 6,
+        "Drop2": 0,
+        "Drop3": 0,
+        "Book2": 3,
+        "Book3": 0,
+        "Book4": 0,
+        "Crown": 0,
+        "Weekly": 0,
+    },
+    {
+        "Mora": 17500,
+        "Drop1": 0,
+        "Drop2": 3,
+        "Drop3": 0,
+        "Book2": 0,
+        "Book3": 2,
+        "Book4": 0,
+        "Crown": 0,
+        "Weekly": 0,
+    },
+    {
+        "Mora": 25000,
+        "Drop1": 0,
+        "Drop2": 4,
+        "Drop3": 0,
+        "Book2": 0,
+        "Book3": 4,
+        "Book4": 0,
+        "Crown": 0,
+        "Weekly": 0,
+    },
+    {
+        "Mora": 30000,
+        "Drop1": 0,
+        "Drop2": 6,
+        "Drop3": 0,
+        "Book2": 0,
+        "Book3": 6,
+        "Book4": 0,
+        "Crown": 0,
+        "Weekly": 0,
+    },
+    {
+        "Mora": 37500,
+        "Drop1": 0,
+        "Drop2": 9,
+        "Drop3": 0,
+        "Book2": 0,
+        "Book3": 9,
+        "Book4": 0,
+        "Crown": 0,
+        "Weekly": 0,
+    },
+    {
+        "Mora": 120000,
+        "Drop1": 0,
+        "Drop2": 0,
+        "Drop3": 4,
+        "Book2": 0,
+        "Book3": 0,
+        "Book4": 4,
+        "Crown": 0,
+        "Weekly": 1,
+    },
+    {
+        "Mora": 260000,
+        "Drop1": 0,
+        "Drop2": 0,
+        "Drop3": 6,
+        "Book2": 0,
+        "Book3": 0,
+        "Book4": 6,
+        "Crown": 0,
+        "Weekly": 1,
+    },
+    {
+        "Mora": 450000,
+        "Drop1": 0,
+        "Drop2": 0,
+        "Drop3": 9,
+        "Book2": 0,
+        "Book3": 0,
+        "Book4": 12,
+        "Crown": 0,
+        "Weekly": 2,
+    },
+    {
+        "Mora": 700000,
+        "Drop1": 0,
+        "Drop2": 0,
+        "Drop3": 12,
+        "Book2": 00,
+        "Book3": 00,
+        "Book4": 16,
+        "Crown": 1,
+        "Weekly": 2,
+    }, 
+]
 
 def calculate_total_requirements(ascensionPerLev: dict):
     total_ascension_requirement = {}
@@ -120,4 +285,4 @@ def calculate_total_requirements(ascensionPerLev: dict):
             total_ascension_requirement[item] += val
     return total_ascension_requirement
 
-print(calculate_total_requirements(character_ascension_requirements))
+print(calculate_total_requirements(talent_ascension_requirements))
